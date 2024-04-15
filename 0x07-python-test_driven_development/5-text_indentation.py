@@ -21,6 +21,6 @@ def text_indentation(text):
     # Print the result
     print(result)
 
-# Example usage
-text = "This is a sample text. It has some sentences? And some colons: like this."
-text_indentation(text)
+if __name__ == "__main__":
+    import doctest
+    doctest.testfile("tests/5-text_indentation.txt")
