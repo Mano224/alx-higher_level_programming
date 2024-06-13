@@ -1,0 +1,14 @@
+#!/usr/bin/python3
+'''module for Base class'''
+
+class Bass:
+    '''A representation of the base of our oop hierarchy.'''
+
+    __nb_objects = 0
+    def __init__(self, id=None):
+        '''constructor'''
+        if id is not None:
+            self.id = id
+        else:
+            Base.__nb_objects += 1
+            Base.__nb_objects = self.id
