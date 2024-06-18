@@ -31,6 +31,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        '''x of this rectangle.'''
         return self.__x
     @x.setter
     def x(self, value):
@@ -39,6 +40,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        '''y of this rectangle.'''
         return self.__y
     @y.setter
     def y(self, value):
