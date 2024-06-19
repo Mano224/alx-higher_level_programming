@@ -9,7 +9,3 @@ function printMessage(args) {
     }
 }
 
-// Example usage
-const args = process.argv.slice(2);
-printMessage(args);
-
