@@ -1,5 +1,5 @@
 #!/usr/bin/node
-process = require(args)
+args = process.argv
 if (args.length === 0){
 	console.log('No argument');
 }
@@ -9,5 +9,4 @@ else if (args.length === 1){
 else {
 	console.log('Arguments found');
 }
-args = process.argv
 
