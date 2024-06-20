@@ -10,3 +10,4 @@ if (!isNaN(x)){
 else {
 	console.log('Missing size');
 }
+
