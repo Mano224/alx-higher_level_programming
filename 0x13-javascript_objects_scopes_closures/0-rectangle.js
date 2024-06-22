@@ -1,5 +1,2 @@
 #!/usr/bin/node
-class Rectangle {
-    // Define properties and methods here
-}
-
+module.exports = class Rectangle { };
