@@ -81,28 +81,21 @@ class Rectangle(Base):
             self.x = x
         if y is not None:
             self.y = y
+             def __update(self, id=None, width=None, height=None, x=None, y=None):
+        if id is not None:
+            self.id = id
+        if width is not None:
+            self.width = width
+        if height is not None:
+            self.height = height
+        if x is not None:
+            self.x = x
+        if y is not None:
+            self.y = y
     def update(self, *args, **kwargs):
         '''updates instance attributes via no-keyword & keyword args.'''
         # print(args, kwargs)
         if args:
             self.__update(*args)
         elif kwargs:
-            self.__update(**kwargs)  def update(self, *args, **kwargs):
-        """update rectangle attributes
-        """
-
-        expect = (self.id, self.width, self.height, self.x, self.y)
-        if args != ():
-            self.id, self.width, self.height, self.x, self.y = \
-                args + expect[len(args):len(expect)]
-        elif kwargs:
-            for (name, value) in kwargs.items():
-                setattr(self, name, value)
-
-    def to_dictionary(self) -> int:
-        """rectangle to dictionary
-        """
-
-        return {
-            'x': self.x, 'y': self.y, 'id': self.id,
-            'height': self.height, 'width': self.width}
+            self.__update(**kwargs)
