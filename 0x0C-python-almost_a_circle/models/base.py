@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''module for Base class'''
-
+import json
 class Base:
     '''A representation of the base of our oop hierarchy.'''
 
@@ -11,7 +11,8 @@ class Base:
             self.id = id
         else:
             Base.__nb_objects += 1
-            self.id = Base.__nb_objects @staticmethod
+            self.id = Base.__nb_objects 
+    @staticmethod
     def to_json_string(list_dictionaries):
         """Return the JSON serialization of a list of dicts.
 
