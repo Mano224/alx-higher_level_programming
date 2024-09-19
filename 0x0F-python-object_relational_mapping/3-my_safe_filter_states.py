@@ -10,11 +10,11 @@ conn = MySQLdb.connect(host= 'localhost',
         db= sys.argv[3])
 cursor = conn.cursor()
 
-cursor.execute("SELECT * FROM states WHERE BINARY name = %s ORDER BY states.id ASC", (sys.argv[4]))
+cursor.execute("SELECT * FROM states WHERE BINARY name = ? ORDER BY states.id ASC", (sys.argv[4]))
 row = cursor.fetchall()
 
 for r in row:
     print(r)
 
 cursor.close()
-db.close()
+conn.close()
