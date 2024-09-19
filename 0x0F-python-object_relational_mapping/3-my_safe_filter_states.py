@@ -3,7 +3,7 @@
 import MySQLdb
 import sys
 
-conn = MySQL.connect(host= 'localhost',
+conn = MySQLdb.connect(host= 'localhost',
         por= 3306,
         user= sys.argv[1],
         password= sys.argv[2],
