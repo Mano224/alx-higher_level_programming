@@ -1,24 +1,36 @@
 #!/usr/bin/python3
-"""0x0F. Python - Object-relational mapping - task 1. Filter states"""
+"""Display name argument of states table"""
+import MySQLdb
+import sys
 
-if __name__ == '__main__':
-    import sys
-    import MySQLdb
 
-    # if len(sys.argv) != 4:
-        # sys.exit('Use: 1-filter_states.py <mysql username> <mysql password>'
-                #  ' <database name>')
+def filter_names():
+    """Takes arguments argv to list from database
+    Only lists with states that matches name argument
 
-    conn = MySQLdb.connect(host='localhost', port=3306, user=sys.argv[1],
-                           passwd=sys.argv[2], db=sys.argv[3], charset='utf8')
-    cur = conn.cursor()
+    Arguments:
+        argv[1]: mysql username
+        argv[2]: mysql password
+        argv[3]: database name
+        argv[4]: state name
+    """
+    db = MySQLdb.connect(host="localhost",
+                         port=3306,
+                         user=sys.argv[1],
+                         passwd=sys.argv[2],
+                         db=sys.argv[3])
 
-    inp1 = input("input your name")
-    cur.execute(f"SELECT * FROM states WHERE name LIKE BINARY '%{inp1}%'"
-                "ORDER BY id ASC")
-    query_rows = cur.fetchall()
-    for row in query_rows:
-        print(row)
+    cur = db.cursor()
+
+    cur.execute("SELECT * FROM states WHERE BINARY name='{:s}'\
+                ORDER BY id ASC".format(sys.argv[4]))
+    rows = cur.fetchall()
+    for i in rows:
+        print(i)
+
     cur.close()
-    conn.close()
+    db.close()
 
+
+if __name__ == "__main__":
+    filter_names()
