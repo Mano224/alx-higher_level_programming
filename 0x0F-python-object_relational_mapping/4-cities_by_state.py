@@ -2,10 +2,11 @@
 #script that lists all cities from the database hbtn_0e_4_usa
 
 
-import sys
-import MySQLdb
+
 if __name__ == '__main__':
-    conn = MuSQLdb.connect(user = sys.argv[1],
+    import sys
+    import MySQLdb
+    conn = MySQLdb.connect(user = sys.argv[1],
             password = sys.argv[2],
             db = sys.argv[3])
     cursor = conn.cursor()
