@@ -13,5 +13,5 @@ if __name__ == '__main__':
     
     class State(Base):
         __tablename__ = "state"
-        id = Column("id", Integer, autoincrement=True, primary_key=True, nullable=false, unique=True)
-        name = column("name", String(128), nullable=False)
+        id = Column("id", Integer, autoincrement=True, primary_key=True, nullable=False, unique=True)
+        name = Column("name", String(128), nullable=False)
